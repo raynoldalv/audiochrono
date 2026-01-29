@@ -54,11 +54,11 @@ if 'history' not in st.session_state:
     st.session_state['history'] = []
 
 # --- ANTARMUKA PENGGUNA (UI) ---
-st.title("🎯 Raynold's Airsoft Audio Chronograph")
+st.title("Airsoft Audio Chronograph")
 st.markdown("Aplikasi pengukur **Muzzle Velocity** berbasis analisis sinyal suara untuk komunitas Airsoft.")
 
 # Sidebar untuk Input Parameter
-st.sidebar.header("⚙️ Parameter Sesi")
+st.sidebar.header(" Parameter Sesi")
 dist = st.sidebar.number_input("Jarak ke Target (m)", min_value=1.0, value=10.0, step=0.5)
 massa = st.sidebar.selectbox("Massa BB (gram)", [0.12, 0.20, 0.25, 0.28, 0.30], index=1)
 suhu = st.sidebar.slider("Suhu Lokasi (°C)", 10, 40, 28)
@@ -88,7 +88,7 @@ if uploaded_file is not None:
             v0, energy, v_avg = calculate_physics(dt_total, dist, suhu, massa)
             
             # --- TAMPILAN DISPLAY UTAMA ---
-            st.markdown("### 🚀 Hasil Pengukuran Terkini")
+            st.markdown("### Hasil Pengukuran Terkini")
             c1, c2, c3 = st.columns(3)
             
             with c1:
@@ -99,7 +99,7 @@ if uploaded_file is not None:
                 st.metric(label="AVG VELOCITY", value=f"{v_avg:.1f} FPS")
 
             # --- VISUALISASI WAVEFORM (VERIFIKASI) ---
-            st.write("#### 🔍 Verifikasi Deteksi Gelombang")
+            st.write("#### Verifikasi Deteksi Gelombang")
             fig, ax = plt.subplots(figsize=(12, 3))
             librosa.display.waveshow(y, sr=sr, ax=ax, alpha=0.5, color='blue')
             ax.vlines(t_shot, -1, 1, color='red', linestyle='--', label='Shot (Start)')
