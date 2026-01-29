@@ -40,10 +40,10 @@ if 'history' not in st.session_state:
     st.session_state['history'] = []
 
 # --- UI UTAMA ---
-st.title("🎯 Raynold's Airsoft Audio Chronograph")
+st.title("Airsoft Audio Chronograph")
 st.write("Gunakan menu 'Files' di HP untuk memilih rekaman audio.")
 
-st.sidebar.header("⚙️ Parameter")
+st.sidebar.header("Parameter")
 dist = st.sidebar.number_input("Jarak (m)", min_value=1.0, value=10.0, step=0.5)
 massa = st.sidebar.selectbox("Massa BB (gram)", [0.12, 0.20, 0.25, 0.28, 0.30], index=1)
 suhu = st.sidebar.slider("Suhu (°C)", 10, 40, 28)
@@ -62,7 +62,7 @@ if uploaded_file is not None:
             dt_total = times[1] - times[0]
             v0, energy, v_avg = calculate_physics(dt_total, dist, suhu, massa)
             
-            st.markdown("### 🚀 Hasil")
+            st.markdown("### Hasil")
             c1, c2, c3 = st.columns(3)
             c1.metric("MUZZLE v0", f"{v0:.1f} FPS")
             c2.metric("ENERGY", f"{energy:.2f} J")
@@ -88,3 +88,4 @@ if st.session_state['history']:
     df = pd.DataFrame(st.session_state['history'])
     st.table(df)
     st.download_button("📥 Download CSV", df.to_csv(index=False), "riwayat_chrono.csv")
+
