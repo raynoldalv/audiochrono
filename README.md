@@ -4,3 +4,8 @@ Airsoft Audio Chronograph adalah sebuah aplikasi web berbasis Python yang diranc
 Perbedaan utama aplikasi ini dengan metode hitung manual terletak pada integrasi model balistik eksponensial. Alih-alih hanya menghitung kecepatan rata-rata ($v = s/t$), sistem ini mengompensasi peluruhan kecepatan akibat gaya hambat udara (air drag) berdasarkan massa jenis udara, suhu lingkungan, dan massa proyektil. Hal ini memungkinkan pengguna mendapatkan estimasi Muzzle Velocity ($v_0$) atau kecepatan tepat di ujung laras, meskipun pengukuran dilakukan pada jarak tertentu seperti 10 meter. Pendekatan saintifik ini memastikan bahwa angka yang dihasilkan mencerminkan kekuatan asli unit sesuai standar industri airsoft.
 
 Dikembangkan menggunakan framework Streamlit, aplikasi ini menawarkan antarmuka yang responsif dan mudah diakses melalui perangkat seluler maupun desktop. Fitur unggulan seperti Batch Export memungkinkan pengguna menyimpan riwayat pengujian ke dalam format CSV untuk dianalisis lebih lanjut menggunakan perangkat lunak statistik. Selain itu, tersedia visualisasi waveform interaktif yang berfungsi sebagai alat verifikasi visual bagi pengguna untuk memastikan bahwa algoritma telah menandai puncak suara tembakan dan hantaman dengan benar. Proyek ini merepresentasikan perpaduan antara minat pada mekanika manufaktur dan implementasi praktis pemrograman Python dalam memecahkan masalah rekayasa sehari-hari.
+
+Instalasi & Penggunaan:
+1. Clone repositori ini.
+2. Instal dependensi: pip install -r requirements.txt.
+3. Jalankan aplikasi: streamlit run app.py.
